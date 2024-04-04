@@ -1,0 +1,26 @@
+﻿<Page x:Class="praktika3.AccountEF"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:praktika3"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="950"
+      Title="AccountEF">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="frame" Margin="5" NavigationUIVisibility="Hidden"/>
+        <DataGrid x:Name="AccountEf" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nick}" Header="Никнейм"/>
+                <DataGridTextColumn Binding="{Binding friends.nickname}" Header="Имя друга"/>
+                <DataGridTextColumn Binding="{Binding games.singleplayer}" Header="Одиночная игра"/>
+                <DataGridTextColumn Binding="{Binding games.multiplayer}" Header="Многопользовательская игра"/>
+                <DataGridTextColumn Binding="{Binding games.coopgame}" Header="Кооперативная игра"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
